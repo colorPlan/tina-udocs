@@ -1,7 +1,7 @@
 const HexadocsHome = () => {
     return (
         <div>
-            Welcome to Hexadocs!
+            Welcome to Hexadocs
         </div>
     )
 }
