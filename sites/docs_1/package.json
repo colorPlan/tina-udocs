@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tinacms dev -c \"vite dev && pnpm --prefix ./node_modules/docs dev\"",
-    "build": "pnpm --prefix ./node_modules/docs build && pnpm tinacms build && cp -r ./node_modules/docs/.next ./.next"
+    "build": "pnpm tinacms build && cp -r ./public/ ../../templates/docs/public && pnpm --filter docs build && cp -r ./node_modules/docs/.next ./.next"
   },
   "keywords": [],
   "author": "",
