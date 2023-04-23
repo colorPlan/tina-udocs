@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tinacms dev -c \"pnpm --prefix ./node_modules/docs dev\"",
+    "dev": "tinacms dev -c \"vite dev && pnpm --prefix ./node_modules/docs dev\"",
     "build": "pnpm --prefix ./node_modules/docs build && pnpm tinacms build"
   },
   "keywords": [],
