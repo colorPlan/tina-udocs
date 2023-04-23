@@ -29,12 +29,10 @@ importers:
   packages/hexatina:
     specifiers:
       '@tinacms/cli': ^1.5.6
-      hexatina: workspace:*
       tinacms: ^1.4.6
       vite: ^4.3.1
     dependencies:
       '@tinacms/cli': 1.5.6_nu75pjn6tbnarbd6xgsr3h5ec4
-      hexatina: 'link:'
       tinacms: 1.4.6_6gxuezi7a4hocqn5u7o6lqxvhq
       vite: 4.3.1
 
@@ -60,22 +58,6 @@ importers:
       typescript: 4.9.3
 
   sites/docs_1:
-    specifiers:
-      '@tinacms/cli': ^1.5.6
-      docs: workspace:*
-      hexatina: workspace:*
-      tinacms: ^1.4.6
-      ts-node: ^10.9.1
-      vite: ^4.3.1
-    dependencies:
-      '@tinacms/cli': 1.5.6_e3enef4sxhy5xipsaf7wyylit4
-      docs: link:../../templates/docs
-      hexatina: link:../../packages/hexatina
-      tinacms: 1.4.6_6gxuezi7a4hocqn5u7o6lqxvhq
-      ts-node: 10.9.1_7cep2inysldxstbcrxlp3njwym
-      vite: 4.3.1_@types+node@17.0.45
-
-  sites/docs_2:
     specifiers:
       '@tinacms/cli': ^1.5.6
       docs: workspace:*
