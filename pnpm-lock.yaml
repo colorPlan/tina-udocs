@@ -63,6 +63,8 @@ importers:
       docs: workspace:*
       hexatina: workspace:*
       next: ^13.3.1
+      react: ^18.2.0
+      react-dom: ^18.2.0
       tinacms: ^1.4.6
       ts-node: ^10.9.1
       vite: ^4.3.1
@@ -71,6 +73,8 @@ importers:
       docs: link:../../templates/docs
       hexatina: link:../../packages/hexatina
       next: 13.3.1_z72xxk7vwlamvgqemvc4ptm4du
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
       tinacms: 1.4.6_6gxuezi7a4hocqn5u7o6lqxvhq
       ts-node: 10.9.1_7cep2inysldxstbcrxlp3njwym
       vite: 4.3.1_@types+node@17.0.45
