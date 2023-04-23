@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "tinacms dev -c \"vite dev\"",
+    "build": "tincams build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
