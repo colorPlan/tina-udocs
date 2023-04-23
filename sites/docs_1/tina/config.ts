@@ -1,7 +1,6 @@
 import { defineConfig } from "tinacms";
 import { HexaDocsSchema } from "hexatina";
 
-// Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
 
 export default defineConfig({
