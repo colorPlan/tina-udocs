@@ -17,5 +17,7 @@ export default defineConfig({
       publicFolder: "public",
     },
   },
-  schema: HexaDocsSchema
+  schema: {
+    ...HexaDocsSchema,
+  }
 });
