@@ -1,0 +1,245 @@
+fragment AuthorsParts on Authors {
+  full_name
+  github
+}
+
+fragment RedirectsParts on Redirects {
+  source {
+    ... on Permalinks {
+      canonical_url
+      pages {
+        __typename
+        page {
+          ... on Doc_pages {
+            title
+            description
+            type
+            draft
+            body
+            last_updated
+          }
+          ... on Document {
+            id
+          }
+        }
+        language
+      }
+    }
+    ... on Document {
+      id
+    }
+  }
+  destination {
+    ... on Permalinks {
+      canonical_url
+      pages {
+        __typename
+        page {
+          ... on Doc_pages {
+            title
+            description
+            type
+            draft
+            body
+            last_updated
+          }
+          ... on Document {
+            id
+          }
+        }
+        language
+      }
+    }
+    ... on Document {
+      id
+    }
+  }
+  permanent
+}
+
+fragment Code_versionsParts on Code_versions {
+  version_number
+  release_date
+  published
+}
+
+fragment PermalinksParts on Permalinks {
+  canonical_url
+  pages {
+    __typename
+    page {
+      ... on Doc_pages {
+        title
+        description
+        author {
+          ... on Authors {
+            full_name
+            github
+          }
+          ... on Document {
+            id
+          }
+        }
+        type
+        code_version {
+          ... on Code_versions {
+            version_number
+            release_date
+            published
+          }
+          ... on Document {
+            id
+          }
+        }
+        draft
+        body
+        last_updated
+      }
+      ... on Document {
+        id
+      }
+    }
+    language
+  }
+}
+
+fragment Table_of_contentsParts on Table_of_contents {
+  language
+  code_version {
+    ... on Code_versions {
+      version_number
+      release_date
+      published
+    }
+    ... on Document {
+      id
+    }
+  }
+  sections {
+    __typename
+    Label
+    permalink {
+      ... on Permalinks {
+        canonical_url
+        pages {
+          __typename
+          page {
+            ... on Doc_pages {
+              title
+              description
+              type
+              draft
+              body
+              last_updated
+            }
+            ... on Document {
+              id
+            }
+          }
+          language
+        }
+      }
+      ... on Document {
+        id
+      }
+    }
+    sub_sections {
+      __typename
+      Label
+      permalink {
+        ... on Permalinks {
+          canonical_url
+          pages {
+            __typename
+            page {
+              ... on Doc_pages {
+                title
+                description
+                type
+                draft
+                body
+                last_updated
+              }
+              ... on Document {
+                id
+              }
+            }
+            language
+          }
+        }
+        ... on Document {
+          id
+        }
+      }
+      sub_sections {
+        __typename
+        Label
+        permalink {
+          ... on Permalinks {
+            canonical_url
+            pages {
+              __typename
+              page {
+                ... on Doc_pages {
+                  title
+                  description
+                  type
+                  draft
+                  body
+                  last_updated
+                }
+                ... on Document {
+                  id
+                }
+              }
+              language
+            }
+          }
+          ... on Document {
+            id
+          }
+        }
+      }
+    }
+  }
+}
+
+fragment Site_settingsParts on Site_settings {
+  language
+  sku_product_name
+  site_title
+  project_code_repository
+  meta_links {
+    __typename
+    link
+    label
+  }
+}
+
+fragment Doc_pagesParts on Doc_pages {
+  title
+  description
+  author {
+    ... on Authors {
+      full_name
+      github
+    }
+    ... on Document {
+      id
+    }
+  }
+  type
+  code_version {
+    ... on Code_versions {
+      version_number
+      release_date
+      published
+    }
+    ... on Document {
+      id
+    }
+  }
+  draft
+  body
+  last_updated
+}
