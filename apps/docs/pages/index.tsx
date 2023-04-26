@@ -1,9 +1,5 @@
-const HexadocsHome = () => {
-    return (
-        <div>
-            Welcome to Hexadocs
-        </div>
-    )
+export default () => {
+    return <div>
+        Hexadocs
+    </div>
 }
-
-export default HexadocsHome;

@@ -1,0 +1,13 @@
+{
+  "canonical_url": "/testing",
+  "pages": [
+    {
+      "page": "content/topics/en/v1.0.0/learn/lorem-ipsum-dolor.mdx",
+      "language": "en"
+    },
+    {
+      "page": "content/topics/en/v1.0.0/learn/lorem-ipsum-french.mdx",
+      "language": "fr"
+    }
+  ]
+}

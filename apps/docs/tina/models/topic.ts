@@ -1,20 +1,19 @@
 ;import { Collection } from "tinacms";
-import { wrapFieldsWithMeta } from 'tinacms'
 
 const Topic: Collection = {
     label: 'Documentation Page',
-    name: 'doc_pages',
-    path: 'content/doc_pages/en',
+    name: 'topics',
+    path: 'content/topics',
     format: 'mdx',
     ui: {
         filename: {
             readonly: true,
             slugify: values => {
-                return `${values.type}-${values.code_version?.match(/\/(v\d+.\d+.\d+)\.json$/)?.[1] ?? ''}-${values.title?.toLowerCase().replace(/ /g, '-') ?? ''}`
+                return `${values.language}/${values.code_version?.match(/\/(v\d+.\d+.\d+)\.json$/)?.[1] ?? ''}/${values.type}/${values.title?.toLowerCase().replace(/ /g, '-') ?? ''}`
             }
         },
         router: ({ document }) => {
-            return `/admin/${document._sys?.filename}`
+            return `/admin/preview/${document._sys?.relativePath}`
         }
     },
     fields: [     
@@ -44,6 +43,16 @@ const Topic: Collection = {
             options: [
                 { value: 'learn', label: 'Learn' },
                 { value: 'refrence', label: 'Reference' },
+            ]
+        },
+        {
+            label: 'Language',
+            name: 'language',
+            type: 'string',
+            required: true,
+            options: [
+                { value: 'en', label: 'English' },
+                { value: 'fr', label: 'French' }
             ]
         },
         {

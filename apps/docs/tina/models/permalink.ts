@@ -5,6 +5,14 @@ const Redirect: Collection = {
     name: 'permalinks',
     path: 'content/permalinks',
     format: 'json',
+    ui: {
+        filename: {
+            readonly: true,
+            slugify: values => {
+                return values.canonical_url
+            }
+        },
+    },
     fields: [
         {
             label: 'Canonical URL',
@@ -23,18 +31,8 @@ const Redirect: Collection = {
                     label: 'Page',
                     name: 'page',
                     type: 'reference',
-                    collections: ['doc_pages'],
+                    collections: ['topics'],
                     required: true,
-                },
-                {
-                    label: 'Language',
-                    name: 'language',
-                    type: 'string',
-                    required: true,
-                    options: [
-                        { value: 'en', label: 'English' },
-                        { value: 'fr', label: 'French' }
-                    ]
                 },
             ]
         }
