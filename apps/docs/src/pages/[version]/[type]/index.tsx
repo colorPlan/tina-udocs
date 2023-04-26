@@ -42,12 +42,14 @@ export const getStaticPaths = async ({ locales }) => {
 
 export const getStaticProps = async ({ params, locale }) => {
     const { version, type } = params;
-
+    console.log(locale, version, type);
     const { variables, query, data } = await client.queries.siteData({
         siteSettings: `${locale}/site_settings.json`,
         tableOfContents: `${locale}/${version}/${type}/toc.json`
     })
-        
+    console.log(data);
+    console.log(locale, version, type);
+
     return {
         props: {
             variables,
