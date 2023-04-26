@@ -1,7 +1,7 @@
 ;import { Collection } from "tinacms";
 
 const Topic: Collection = {
-    label: 'Documentation Page',
+    label: 'Topics',
     name: 'topics',
     path: 'content/topics',
     format: 'mdx',

@@ -16,7 +16,7 @@ export const getStaticPaths = async ({ locales }) => {
             locale: page.language
         }))
     });
-
+    console.log(paths);
     return {
         paths,
         fallback: false,

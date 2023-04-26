@@ -5,7 +5,7 @@ module.exports = {
   reactStrictMode: true,
   transpilePackages: ["ui"],
   i18n: {
-    locales: ['en', 'fr'],
+    locales: ['en'],
     defaultLocale: 'en',
     localeDetection: false,
   },
