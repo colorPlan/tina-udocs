@@ -1,0 +1,11 @@
+{
+  "language": "en",
+  "code_version": "content/code_versions/v2.0.0.json",
+  "type": "learn",
+  "sections": [
+    {
+      "Label": "Get Started",
+      "permalink": "content/permalinks/testing/two.json"
+    }
+  ]
+}

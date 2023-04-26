@@ -52,7 +52,6 @@ const Topic: Collection = {
             required: true,
             options: [
                 { value: 'en', label: 'English' },
-                { value: 'fr', label: 'French' }
             ]
         },
         {

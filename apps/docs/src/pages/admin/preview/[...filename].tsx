@@ -10,7 +10,6 @@ export const getStaticPaths = async () => {
     }
 }
 
-
 export const getStaticProps = async ({ params }) => {
     const { filename } = params;
 

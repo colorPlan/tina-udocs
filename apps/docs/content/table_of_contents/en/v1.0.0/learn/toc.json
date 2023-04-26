@@ -1,0 +1,25 @@
+{
+  "language": "en",
+  "code_version": "content/code_versions/v1.0.0.json",
+  "type": "learn",
+  "sections": [
+    {
+      "Label": "Get Started",
+      "permalink": "content/permalinks/testing.json"
+    },
+    {
+      "Label": "Advanced",
+      "permalink": "content/permalinks/testing/two.json",
+      "sub_sections": [
+        {
+          "Label": "One",
+          "permalink": "content/permalinks/testing/two.json"
+        },
+        {
+          "Label": "Two",
+          "permalink": "content/permalinks/testing/two.json"
+        }
+      ]
+    }
+  ]
+}

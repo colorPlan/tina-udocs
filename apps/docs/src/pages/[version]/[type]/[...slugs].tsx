@@ -37,10 +37,12 @@ export const getStaticProps = async ({ params, locale }) => {
             return page.language === locale && page.code_version.version_number === version && page.type === type
         });
     
-        const { variables, query, data } = await client.queries.topics({
-            relativePath: permalinkPage.page.id.replace('content/topics', '')
+        const { variables, query, data } = await client.queries.topicWithSiteData({
+            relativePath: permalinkPage.page.id.replace('content/topics', ''),
+            siteSettings: `${locale}/site_settings.json`,
+            tableOfContents: `${locale}/${version}/${type}/toc.json`
         })
-    
+            
         return {
             props: {
                 variables,
@@ -55,5 +57,4 @@ export const getStaticProps = async ({ params, locale }) => {
             }
         }
     }
-   
 }

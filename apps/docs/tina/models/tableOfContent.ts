@@ -5,6 +5,12 @@ const TableOfContent: Collection = {
     name: 'table_of_contents',
     path: 'content/table_of_contents',
     format: 'json',
+    ui: {
+        filename: {
+            slugify: (values) => `${values.language}/${values.code_version?.match(/\/(v\d+.\d+.\d+)\.json$/)?.[1] ?? ''}/${values.type}/toc`
+
+        }
+    },
     fields: [
         {
             label: 'Language',
@@ -13,7 +19,6 @@ const TableOfContent: Collection = {
             required: true,
             options: [
                 { value: 'en', label: 'English' },
-                { value: 'fr', label: 'French' }
             ]
         },
         {
@@ -21,6 +26,14 @@ const TableOfContent: Collection = {
             name: 'code_version',
             type: 'reference',
             collections: ['code_versions'],
+        },
+        {
+            label: 'Type',
+            name: 'type',
+            type: 'string',
+            options: [
+                { value: 'learn', label: 'Learn' },
+            ]
         },
         {
             label: 'Sections',

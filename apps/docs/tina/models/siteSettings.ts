@@ -7,7 +7,7 @@ const SiteSettings: Collection = {
     format: 'json',
     ui: {
         filename: {
-            slugify: () => 'site_settings'
+            slugify: (values) => `${values.language}/site_settings`
         }
     },
     fields: [
@@ -18,7 +18,6 @@ const SiteSettings: Collection = {
             required: true,
             options: [
                 { value: 'en', label: 'English' },
-                { value: 'fr', label: 'French' }
             ]
         },
         {

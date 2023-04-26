@@ -1,18 +1,28 @@
-import Head from "next/head";
+import { TopicWithSiteDataQuery, TopicWithSiteDataQueryVariables } from "@tina/__generated__/types";
 import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import DocLayout from "../layouts/DocLayout";
 
-const DocPage = ({ data, variables, query }) => {
+
+type Props = {
+  data: TopicWithSiteDataQuery,
+  variables: TopicWithSiteDataQueryVariables,
+  query: string
+}
+
+const DocPage: React.FC<Props> = ({ data, variables, query }) => {
 
     const { data: pageData } = useTina({
         query: query,
         variables: variables,
         data: data,
       })
+
+      
       if (!pageData?.topics) return null;
 
       return (
-        <>
+        <DocLayout siteSettings={data.site_settings} codeVersions={data.code_versionsConnection.edges} tableOfContents={data.table_of_contents}>
           <div>
             <div
               style={{
@@ -24,19 +34,8 @@ const DocPage = ({ data, variables, query }) => {
               </h1>
               <TinaMarkdown content={pageData?.topics.body}></TinaMarkdown>
             </div>
-            <div className="bg-green-100 text-center">
-              Lost and looking for a place to start?
-              <a
-                href="https://tina.io/guides/tina-cloud/getting-started/overview/"
-                className="text-blue-500 underline"
-              >
-                {' '}
-                Check out this guide
-              </a>{' '}
-              to see how add TinaCMS to an existing Next.js site.
-            </div>
           </div>
-        </>
+        </DocLayout>
       );
 };
 export default DocPage;

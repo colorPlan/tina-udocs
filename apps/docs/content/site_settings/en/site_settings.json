@@ -1,0 +1,12 @@
+{
+  "language": "en",
+  "sku_product_name": "Test",
+  "site_title": "Testing",
+  "project_code_repository": "https://github.com/colorPlan/unity-docs",
+  "meta_links": [
+    {
+      "link": "https://facebook.com",
+      "label": "Facebook"
+    }
+  ]
+}

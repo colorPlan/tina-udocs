@@ -3,8 +3,10 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "compilerOptions": {
+    "baseUrl": "./",
     "paths": {
-      "@tina/*": ["./tina/*"]
+      "@/*": ["src/*"],
+      "@tina/*": ["tina/*"]
     }
   }
 }

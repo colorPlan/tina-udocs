@@ -1,0 +1,111 @@
+query topicWithSiteData($relativePath: String!, $siteSettings: String!, $tableOfContents: String!) {
+    topics(relativePath: $relativePath) {
+        ... on Document {
+        _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+        }
+        id
+        }
+        ...TopicsParts
+    }
+    table_of_contents(relativePath: $tableOfContents) {
+        ... on Document {
+        _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+        }
+        id
+        }
+        ...Table_of_contentsParts
+    }
+    code_versionsConnection(filter: { published: { eq: true }}) {
+        edges {
+            node {
+                ... on Code_versions {
+                    _sys {
+                        filename
+                        basename
+                        breadcrumbs
+                        path
+                        relativePath
+                        extension
+                    }
+                    id
+                }
+                ...Code_versionsParts
+            }
+        }
+    }
+    site_settings(relativePath: $siteSettings) {
+        ... on Document {
+        _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+        }
+        id
+        }
+        ...Site_settingsParts
+    }
+}
+
+query siteData($siteSettings: String!, $tableOfContents: String!) {
+    table_of_contents(relativePath: $tableOfContents) {
+        ... on Document {
+        _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+        }
+        id
+        }
+        ...Table_of_contentsParts
+    }
+    code_versionsConnection(filter: { published: { eq: true }}) {
+        edges {
+            node {
+                ... on Code_versions {
+                    _sys {
+                        filename
+                        basename
+                        breadcrumbs
+                        path
+                        relativePath
+                        extension
+                    }
+                    id
+                }
+                ...Code_versionsParts
+            }
+        }
+    }
+    site_settings(relativePath: $siteSettings) {
+        ... on Document {
+        _sys {
+            filename
+            basename
+            breadcrumbs
+            path
+            relativePath
+            extension
+        }
+        id
+        }
+        ...Site_settingsParts
+    }
+}
