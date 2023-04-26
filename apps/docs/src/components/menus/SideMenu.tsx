@@ -36,7 +36,7 @@ const SideMenu: React.FC<Props> = ({ codeVersions, tableOfContents}) => {
 
     const menuItems = tableOfContents.sections.map((item) => {
         if (item.sub_sections) {
-            return <Nav.Menu title={item.Label}>
+            return <Nav.Menu title={item.Label} key={item.permalink.id}>
                 {item.sub_sections.map((subItem) => (  
                     <Link href={buildUrl(item.permalink.canonical_url)} legacyBehavior key={item.permalink.id}>
                         <Nav.Item href={buildUrl(item.permalink.canonical_url)}>{subItem.Label}</Nav.Item>                
