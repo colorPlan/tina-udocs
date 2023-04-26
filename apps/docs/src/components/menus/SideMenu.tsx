@@ -1,7 +1,6 @@
 import { TopicWithSiteDataQuery } from "@tina/__generated__/types";
 import { useRouter } from "next/router";
-import { Nav, Navbar, SelectPicker, Sidenav, Toggle } from "rsuite"
-import GearCircleIcon from '@rsuite/icons/legacy/GearCircle';
+import { Nav, SelectPicker, Sidenav } from "rsuite"
 import Link from "next/link";
 
 type Props = {
@@ -37,16 +36,16 @@ const SideMenu: React.FC<Props> = ({ codeVersions, tableOfContents}) => {
 
     const menuItems = tableOfContents.sections.map((item) => {
         if (item.sub_sections) {
-            return <Nav.Menu title={item.Label} icon={<GearCircleIcon/>}>
+            return <Nav.Menu title={item.Label}>
                 {item.sub_sections.map((subItem) => (  
-                    <Link href={buildUrl(item.permalink.canonical_url)} legacyBehavior>
+                    <Link href={buildUrl(item.permalink.canonical_url)} legacyBehavior key={item.permalink.id}>
                         <Nav.Item href={buildUrl(item.permalink.canonical_url)}>{subItem.Label}</Nav.Item>                
                     </Link>
                 ))}
             </Nav.Menu>
         }
         return (
-            <Link href={buildUrl(item.permalink.canonical_url)} legacyBehavior>
+            <Link href={buildUrl(item.permalink.canonical_url)} legacyBehavior key={item.permalink.id}>
                 <Nav.Item href={buildUrl(item.permalink.canonical_url)}>
                     {item.Label}
                 </Nav.Item>
