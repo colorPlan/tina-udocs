@@ -28,19 +28,13 @@ export const getStaticPaths = async ({ locales }) => {
                     version: codeVersion.node.version_number,
                     type: 'learn'
                 }
-            },
-            {
-                params: {
-                    version: codeVersion.node.version_number,
-                    type: 'reference'
-                }
             }
         ]
     })
 
     return {
         paths,
-        fallback: false,
+        fallback: true,
     }
 }
 
