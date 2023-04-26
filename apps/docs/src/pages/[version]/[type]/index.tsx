@@ -11,6 +11,7 @@ type Props = {
 
   
 const Home: React.FC<Props> = ({ data }) => {    
+    console.log(data);
     return <DocLayout siteSettings={data.site_settings} codeVersions={data.code_versionsConnection.edges} tableOfContents={data.table_of_contents}>
         Welcome to Hexadocs for {data.site_settings.site_title}
     </DocLayout>
