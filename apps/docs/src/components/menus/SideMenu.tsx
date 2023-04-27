@@ -54,8 +54,8 @@ const SideMenu: React.FC<Props> = ({ codeVersions, tableOfContents}) => {
     })
 
     return (    
-        <div>
-             <Nav appearance="tabs" justified>
+        <div className="flex flex-col">
+            <Nav appearance="tabs" justified>
                 <Nav.Item eventKey="learn" onSelect={handleTypeChange} active={type === 'learn'} className="text-center">
                     Learn
                 </Nav.Item>
@@ -63,7 +63,7 @@ const SideMenu: React.FC<Props> = ({ codeVersions, tableOfContents}) => {
                     Reference
                 </Nav.Item>
             </Nav>
-            <Sidenav className="p-4 h-full max-w-[300px]">
+            <Sidenav className="flex-grow p-4 max-w-[300px]">
                 <SelectPicker className="mx-auto" label="Version" defaultValue={version} searchable={false} cleanable={false}  onChange={handleVersionChange} data={codeVersions.map((codeVersion) => ({ label: codeVersion.node.version_number, value: codeVersion.node.version_number}))}/>
                 <Sidenav.Body className="space-y-4">
                     <Nav activeKey="1">
