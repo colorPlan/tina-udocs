@@ -1,7 +1,7 @@
 {
   "language": "en",
-  "sku_product_name": "Test",
-  "site_title": "Testing",
+  "sku_product_name": "hexadocs-v0.2",
+  "site_title": "Hexadocs LoFi Prototype",
   "project_code_repository": "https://github.com/colorPlan/unity-docs",
   "meta_links": [
     {
