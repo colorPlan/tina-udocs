@@ -39,14 +39,7 @@ const DocPage: React.FC<Props> = ({ data, variables, query }) => {
 };
 export default DocPage;
 
-export const getStaticPaths = async () => {
-    return {
-        paths: [],
-        fallback: true,
-    }
-}
-
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
     const { filename, locale, version, type } = params;
 
     try {
